@@ -3,7 +3,9 @@
 		<title> Welcome page</title>
 	</head>
 	<body>
-		My first html page with body - JSP
-		${name}
+		<div class="container">
+			<h1>Welcome ${name}</h1>
+			<a href="list-todos">Manage</a> your todos
+		</div>
 	</body>
 </html>
