@@ -39,10 +39,13 @@ public class SpringSecurityConfiguration {
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {
-		System.out.println("Second 2");
 		return new BCryptPasswordEncoder();
 	}
 
+	// All URLs are protected
+	// A login form is shown for unauthorized requests
+	// CSRF disable
+	// Frames
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.authorizeHttpRequests(auth -> auth.anyRequest().authenticated());
