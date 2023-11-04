@@ -80,7 +80,7 @@ public class TodoControllerJpa {
 		String username = getLoggedInUsername(model);
 		todo.setUsername(username);
 //		todosService.updateTodo(todo);
-		todoRepository.deleteById(todo.getId());
+		//todoRepository.deleteById(todo.getId());
 		todoRepository.save(todo);
 		return "redirect:list-todos";
 	}
