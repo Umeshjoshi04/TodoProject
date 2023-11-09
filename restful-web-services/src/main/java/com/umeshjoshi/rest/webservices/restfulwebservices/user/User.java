@@ -2,10 +2,15 @@ package com.umeshjoshi.rest.webservices.restfulwebservices.user;
 
 import java.time.LocalDate;
 
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
+
 public class User {
 
 	private Integer id;
+	@Size(min=2, message = "name should have more than 2 chars")
 	private String name;
+	@Past(message = "no future date")
 	private LocalDate dateOfBirth;
 	public User(Integer id, String name, LocalDate dateOfBirth) {
 		super();
